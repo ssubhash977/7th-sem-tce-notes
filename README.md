@@ -1,1 +1,1 @@
-# testing_7th_sem_notes
+# 7th_sem_tce_notes
