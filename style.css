@@ -1,5 +1,5 @@
 body {
-    font-family: 'ABeeZee';
+    font-family: 'Poppins';
     font-size: 20px;
 }
 
@@ -12,7 +12,7 @@ input[type=date],
 input[type=number],
 select,
 textarea {
-    font-family: 'ABeeZee';
+    font-family: 'Poppins';
     max-width: 100%;
     width: 250px;
     padding: 15px 23px;
@@ -24,7 +24,7 @@ textarea {
 }
 
 table {
-    font-family: 'ABeeZee';
+    font-family: 'Poppins';
     border-collapse: collapse;
     border-spacing: 0;
     width: 100%;
@@ -50,7 +50,7 @@ tr:hover {
 }
 
 .dropbtn {
-    font-family: 'ABeeZee';
+    font-family: 'Poppins';
     background-color: #3498DB;
     color: white;
     padding: 8px 15px;
