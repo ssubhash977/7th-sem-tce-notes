@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="assets/css/styles.css">
+
+        <!-- =====BOX ICONS===== -->
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <style>
+.dropbtn {
+  background-color: #3498DB;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  outline:0px;
+  cursor: pointer;
+  display: inline-block;
+  background-color: var(--first-color);
+  color: #fff;
+
+  font-weight: var(--font-semi);
+    border-radius: .5rem;
+
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  box-shadow: 0 10px 36px rgba(0,0,0,.15);
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
+</style>
+
+
+        <title>7th Sem TCE Notes</title>
+    </head>
+    <body>
+        <!--===== HEADER =====-->
+        <header class="l-header">
+            <nav class="nav bd-grid">
+                <div>
+                    <a href="https://www.dsce.edu.in/" class="nav__logo"><img  src="dsce.png" style="width:autopx;height:60px;" alt="DSCE LOGO"></a>
+                </div>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="index.html" class="nav__link active">Home</a></li>
+                        <li class="nav__item"><a href="http://ssubhash977.pythonanywhere.com/contact.html" class="nav__link">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-menu'></i>
+                </div>
+            </nav>
+        </header>
+
+        <main class="l-main">
+            <!--===== HOME =====-->
+            <section class="home bd-grid" id="home">
+                <div class="home__data">
+
+                  <br >
+                  <br >
+
+                    <h1 class="home__title">  <span class="home__title-color">Telecommunication</span><br> Engineering</h1>
+                    <div class="dropdown">
+  <button onclick="myFunction()" class="dropbtn">Choose a Subject</button>
+  <div id="myDropdown" class="dropdown-content">
+    <a href="ccn_lab.html">CCN LAB</a>
+    <a href="wco_lab.html">WCO LAB</a>
+    <a href="ccn.html">CCN</a>
+    <a href="ocn.html">OCN</a>
+    <a href="mimo.html">MIMO</a>
+    <a href="manets.html">MANETS</a>
+    <a href="cns.html">CNS</a>
+    <a href="ptw.html">PTW</a>
+  </div>
+</div>
+<p></p>
+                    <p>Click on the above Dropdown menu to find <strong>7th semester</strong> Complete Notes,<br > Syllabus Copy, Question Banks, All 3 Internals Question Papers,<br > Text Books etc all at one place.</p>
+
+
+
+<script>
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+                </div>
+
+                <div class="home__social">
+
+                </div>
+
+                <div class="home__img">
+                  <!--===== <img src="assets/img/dsce.png" alt=""> =====-->
+                </div>
+                <div class="media-icons">
+        <a href="https://www.linkedin.com/in/subhash-s-01542a1a2/"><i class="fab fa-linkedin"></i></a>
+
+        <a href="https://github.com/ssubhash977"><i class="fab fa-github"></i></a>
+        <a href="http://ssubhash977.pythonanywhere.com/"><i class="fas fa-globe"></i></a>
+        <a href="https://twitter.com/sSubhash777?s=08"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com/ssubhash25/"><i class="fab fa-instagram"></i></a>
+
+      </div>
+      <center>
+       <p >© Subhash S<br >2021 </p>
+
+     </center>
+
+            </section>
+
+
+
+
+
+
+        <!--===== SCROLL REVEAL =====-->
+        <script src="https://unpkg.com/scrollreveal"></script>
+
+        <!--===== MAIN JS =====-->
+        <script src="assets/js/main.js"></script>
+
+    </body>
+</html>
