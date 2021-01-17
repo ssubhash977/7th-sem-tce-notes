@@ -19,8 +19,8 @@ textarea {
     padding: 15px 23px;
     margin: 8px 0;
     display: inline-block;
-    border: 2px solid #000;
-    border-radius: 4px;
+    
+    border-radius: 25px;
     box-sizing: border-box;
 }
 
