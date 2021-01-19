@@ -1,0 +1,51 @@
+#include<stdio.h>
+#include<string.h>
+
+void main()
+{
+	char ch, array[50]={"01111110-"},recd_array[50];
+	int counter=0,i=9,j,k;
+
+
+	printf("Enter the original data stream for bit stuffing : \n");
+	while(1)
+	{
+		scanf("%c",&ch);
+		if (ch=='\n')
+			break;
+		if (ch=='1')
+			++counter;
+		else
+			counter=0;
+		array[i++]=ch;
+		if (counter==5)    /* If 5 ones are encountered append a zero */
+		{
+			array[i++]='0';
+			counter=0;
+		}
+	}
+array[i]='\0';
+strcat(array,"-01111110");
+     array[i+9]='\0';
+    counter= 0;
+printf("\nThe stuffed data stream is : %s \n",array);
+	for (j=9,k=0;j<(strlen(array)-9);++j)
+	{
+		if (array[j]=='1')
+			++counter;
+		else
+			counter=0;
+		recd_array[k++]=array[j];
+
+		 if (counter==5)  /* If five ones appear, delete the following zero */
+		{
+			++j;
+			counter=0;
+		}
+	}
+recd_array[k]='\0';
+
+printf("the destuffed data stream is %s",recd_array);
+}
+
+
