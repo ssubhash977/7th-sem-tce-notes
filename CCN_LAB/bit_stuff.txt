@@ -1,18 +1,18 @@
 #include<stdio.h>
 #include<string.h>
+#include<conio.h>
 
 void main()
 {
 	char ch, array[50]={"01111110-"},recd_array[50];
 	int counter=0,i=9,j,k;
+	clrscr();
 
 
 	printf("Enter the original data stream for bit stuffing : \n");
-	while(1)
+	while((ch=getche())!='\r')
 	{
-		scanf("%c",&ch);
-		if (ch=='\n')
-			break;
+
 		if (ch=='1')
 			++counter;
 		else
@@ -46,6 +46,7 @@ printf("\nThe stuffed data stream is : %s \n",array);
 recd_array[k]='\0';
 
 printf("the destuffed data stream is %s",recd_array);
+getch();
 }
 
 
