@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include<string.h>
+int main(void)
+{
+ int fd[2], nbytes;
+ int pid;
+ char string[50];
+ char readbuffer[80];
+ pipe(fd);
+
+ pid=fork();
+ if(pid == 0)
+ {
+ printf(" i am in child and pid variable=%d\n",pid);
+ printf("enter the string to be passed to parent");
+ gets(string);
+
+ close(fd[0]);
+ write(fd[1], string, (strlen(string)+1));
+
+ }
+ else
+ {
+ printf("i am in parent and pid variable=%d\n",pid);
+ close(fd[1]);
+ /* Read in a string from the pipe */
+ nbytes = read(fd[0], readbuffer, sizeof(readbuffer));
+ printf("\nReceived string: %s , number of bytes=%d", readbuffer,nbytes);
+ }
+
+ return(0);
+}

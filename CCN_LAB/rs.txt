@@ -1,0 +1,29 @@
+#include<stdio.h>
+#include<conio.h>
+#include<bios.h>
+#define SETTINGS (_COM_9600 | _COM_CHR8 |_COM_NOPARITY|_COM_STOP1)
+/* baud rate = 9600, 8 data bits, no parity bit, 1 stop bit */
+void main(void)
+{
+unsigned int in,out,status;
+int port=0;
+clrscr();
+cprintf("\n\rData Received:");
+_bios_serialcom(_COM_INIT,port,SETTINGS);
+for(;;)
+{
+if(kbhit()) /* if a keystroke is currently available */
+{
+in=getche(); /* get a character with echoing onto the screen */
+if(in==27) /* if ESC */
+break;
+_bios_serialcom(_COM_SEND,port,in);
+}
+status=_bios_serialcom(_COM_STATUS,port,0);
+if(status & 256) /* if data ready */
+{
+if((out=_bios_serialcom(_COM_RECEIVE,port,0) & 255)!=0)
+putch(out);
+}
+}
+}
