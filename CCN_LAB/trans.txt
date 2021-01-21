@@ -1,0 +1,51 @@
+#include<stdio.h>
+#include<conio.h> //comment this out for online compilers
+#include<string.h>
+#include<ctype.h>
+void main ()
+{
+
+char inp[100], out[100], key[20], dec[100];
+int i, j, k = 0, ilen, klen, t;
+char ch = 'A';
+clrscr(); //comment this out for online compilers
+printf ("Enter the string to be encrypted : ");
+gets(inp);
+printf ("\nEnter the key string : ");
+gets(key);
+
+ilen = strlen (inp);
+klen = strlen (key);
+
+for (t = 0; t < ilen; t++)
+	if (inp[t] == ' ')
+		inp[t] = '-';
+
+while (ilen % klen)
+	inp[ilen++] = '-';
+
+for (ch = 'A'; ch <= 'Z'; ch++)
+	for (j = 0; j <= klen; j++)
+		if (toupper (key[j]) == ch)
+			for (i = j; i < ilen; i += klen)
+				out[k++] = inp[i];
+		out[k] = '\0';
+printf ("\nThe encrypted output is : %s\n", out);
+/* decryption */
+printf("\nEnter the key : ");
+gets(key);
+
+
+for (ch = 'A', k = 0; ch <= 'Z'; ch++)
+	for (j = 0; j < klen; j++)
+		if (toupper (key[j]) == ch)
+			for (i = j; i < ilen; i += klen)
+				dec[i] = out[k++];
+	dec[k] = '\0';
+
+for (t = 0; t < ilen; t++)
+	if (dec[t] == '-')
+		dec[t] = ' ';
+printf ("\nThe decrypted output is : %s\n", dec);
+getch(); //comment this out for online compilers
+}

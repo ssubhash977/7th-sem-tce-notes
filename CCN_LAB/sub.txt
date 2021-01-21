@@ -1,0 +1,46 @@
+# include<string.h>
+# include<ctype.h>
+# include<stdio.h>
+void main()
+{
+char data[50];
+char encoded[50];
+char decoded[50];
+int i,len,key;
+printf("\nEnter data to be encoded: ");
+gets(data);
+len = strlen(data);
+printf("\nEnter the key for encryption : \n");
+scanf("%d",&key);
+for(i=0;i<len;i++)
+{
+    if(data[i] == ' ')
+    {
+        encoded[i] = ' ';
+    }
+    else
+    {
+        encoded[i]= 'a'+((data[i]-'a')+key)%26;
+    }
+}
+
+ encoded[i]='\0';
+printf("\nThe encrypted data is %s\n", encoded);
+ /*decryption */
+
+for(i=0;i<len;i++)
+{
+    if(encoded[i]==' ')
+    {
+        decoded[i] = ' ';
+    }
+    else
+    {
+        decoded[i]='a'+( (( encoded[i]-'a')+(26-key))%26);
+    }
+}
+
+decoded[i]='\0';
+printf("The decrypted message is %s", decoded);
+
+}

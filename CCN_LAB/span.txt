@@ -1,0 +1,60 @@
+#include<stdio.h>
+#include<conio.h>
+struct edge
+{
+int fn,sn,dist;
+}e[50],temp;
+void main()
+{
+int i,j,n,set[10],ecnt=0,m,k;
+clrscr(); //comment this out for online compilers
+printf("Enter the no of vertices\n");
+scanf("%d",&n);
+for(i=0;i<n;i++)
+{
+ for(j=i+1;j<n;j++)
+ {
+printf("Enter the distance between %c and %c \n",i+'A',j+'A');
+scanf("%d",&e[ecnt].dist);
+e[ecnt].fn=i;
+e[ecnt].sn=j;
+ecnt++;
+ }
+}
+for(i=0;i<n;i++)
+{
+set[i]=i;
+}
+for(i=0;i<ecnt;i++)
+{
+for(j=0;j<ecnt-i-1;j++)
+{
+if(e[j].dist>e[j+1].dist)
+{
+temp=e[j];
+e[j]=e[j+1];
+e[j+1]=temp;
+}
+}
+
+}
+printf("\n The minimum spanning tree is : \n");
+for(i=0;i<ecnt;i++)
+{
+m=set[e[i].fn];
+k=set[e[i].sn];
+if(m!=k)
+{
+ printf(" %c-->%c, distance=%d \n",e[i].fn+'A',e[i].sn+'A',e[i].dist);
+for(j=0;j<n;j++)
+{
+if(set[j]==k)
+{
+set[j]=m;
+}
+}
+
+}
+}
+getch(); //comment this out for online compilers
+}
