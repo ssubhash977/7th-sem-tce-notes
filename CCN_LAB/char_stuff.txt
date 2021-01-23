@@ -16,7 +16,7 @@ int main()
 
 	printf("Enter the data stream (Ctrl+B->STX, Ctrl+C->ETX, Ctrl+P->DLE) :\n");
 
-	while ((ch=getche())!='\r') //or (ch=getchar())!='\n') - for online compilers
+	while ((ch=getchar())!='\n') //or (ch=getchar())!='\n') - for online compilers
 	{
 		if (ch==DLE)
 		{
@@ -67,7 +67,8 @@ int main()
 		else
 			printf("%c ",array[j]);
 	}
-	return 0;
-	printf("/n");
+	
+	printf("\n");
 	getch(); //comment this out for online compilers
+	return 0;
 }
