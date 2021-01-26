@@ -5,8 +5,21 @@ EIRPu=input('Enter the uplink EIRP:');
 EIRPd=input('Enter the downlink EIRP:');
 GTRu=input('Enter the uplink G/T:');
 GTRd=input('Enter the downlink G/T:');
+
 FSLu=input('Enter the uplink fsl:'); 
 FSLd=input('Enter the downlink fsl:');
+
+% if they ask us to calculate for free space loss for uplink and downlink
+% for uplink
+% du=input('Enter the uplink distance:'); 
+% fu=input('Enter the uplink frequency:'); 
+% FSLu = 20*log10(du) + 20*log10(fu) + 32.44;
+
+% for downlink
+% dd=input('Enter the downlink distance:'); 
+% fd=input('Enter the downlink frequency:'); 
+% FSLd = 20*log10(dd) + 20*log10(fd) + 32.44;
+
 RFLu=input('Enter the uplink RFL:');
 RFLd=input('Enter the downlink RFL:');
 AAu=input('Enter the uplink AA:');
