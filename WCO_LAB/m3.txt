@@ -1,0 +1,44 @@
+clc;
+clear all;
+close all;
+EIRPu=input('Enter the uplink EIRP:');
+EIRPd=input('Enter the downlink EIRP:');
+GTRu=input('Enter the uplink G/T:');
+GTRd=input('Enter the downlink G/T:');
+FSLu=input('Enter the uplink fsl:'); 
+FSLd=input('Enter the downlink fsl:');
+RFLu=input('Enter the uplink RFL:');
+RFLd=input('Enter the downlink RFL:');
+AAu=input('Enter the uplink AA:');
+AAd=input('Enter the downlink AA:');
+AMLu=input('Enter the uplink AML:');
+AMLd=input('Enter the downlink AML:');
+Lossu=FSLu+RFLu+AAu+AMLu 
+Lossd=FSLd+RFLd+AAd+AMLd 
+CNRu=EIRPu+GTRu-Lossu+228.6; 
+disp(sprintf('%s %f %s','Total carrier to noise ratio for uplink is:',CNRu,'decilog'));
+CNRd=EIRPd+GTRd-Lossd+228.6; 
+disp(sprintf('%s %f %s','Total carrier to noise ratio for downlink is:',CNRd,'decilog'));
+CNRt=CNRu*CNRd/(CNRu+CNRd); 
+disp(sprintf('%s %f %s','Total carrier to noise ratio is:',CNRt,'decilog'));
+
+
+% OUTPUT
+
+Enter the uplink EIRP:> 11
+Enter the downlink EIRP:> 12
+Enter the uplink G/T:> 2
+Enter the downlink G/T:> 3
+Enter the uplink fsl:> 11
+Enter the downlink fsl:> 12
+Enter the uplink RFL:> 2
+Enter the downlink RFL:> 3
+Enter the uplink AA:> 3
+Enter the downlink AA:> 2
+Enter the uplink AML:> 2
+Enter the downlink AML:> 3
+Lossu = 18
+Lossd = 20
+Total carrier to noise ratio for uplink is: 223.600000 decilog
+Total carrier to noise ratio for downlink is: 223.600000 decilog
+Total carrier to noise ratio is: 111.800000 decilog

@@ -1,0 +1,20 @@
+clc;
+clear all;
+close all;
+fsl =input('enter the fsl value:');
+Amu=input('enter the median attenuation value:');
+Gte=input('enter the Mobile station antenna height gain factor:');
+Ghe=input('enter the Base station antenna height gain factor:');
+Garea =input('enter the Correction factor gain:');
+L = fsl + Amu- Gte-Ghe-Garea ; 
+disp(sprintf('%s %f %s', 'the median path loss:',L,'dB'));
+
+
+% OUTPUT
+
+enter the fsl value:> 12
+enter the median attenuation value:> 2
+enter the Mobile station antenna height gain factor:> 3
+enter the Base station antenna height gain factor:> 2
+enter the Correction factor gain:> 2
+the median path loss: 7.000000 dB

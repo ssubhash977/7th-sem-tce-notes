@@ -1,0 +1,37 @@
+clc;
+close all;
+clear all;
+pt=input('Enter the input power in watts:');
+Pt=10*log10(pt)
+gt=input('Enter the transmitting antenna gain in db:');
+gs=input('Enter the recieving antenna gain in db:');
+EIRP=Pt+gt 
+d=input('Enter the distance in km:');
+f=input('Enter the frequency in mhz:');
+fsl=32.4+20*log10(d)+20*log10(f) 
+rfl=input('Enter the reciever feeder loss in db:');
+aa=input('Enter the atmospheric absorption in db:');
+aml=input('Enter the antenna misalignment loss in db:');
+pl=input('Enter the polarization loss in db:');
+losses=fsl+rfl+aa+aml+pl; 
+disp(sprintf('%s %f %s','Total loss',losses,'db'));
+P=EIRP+gs-losses; 
+disp(sprintf('%s %f %s','Total recieved power =',P,'db'));
+
+
+% OUTPUT
+
+Enter the input power in watts:> 200
+Pt = 23.010
+Enter the transmitting antenna gain in db:> 4
+Enter the recieving antenna gain in db:> 2
+EIRP = 27.010
+Enter the distance in km:> 5
+Enter the frequency in mhz:> 150
+fsl = 89.901
+Enter the reciever feeder loss in db:> 2
+Enter the atmospheric absorption in db:> 1
+Enter the antenna misalignment loss in db:> 5
+Enter the polarization loss in db:> 6
+Total loss 103.901225 db
+Total recieved power = -74.890925 db

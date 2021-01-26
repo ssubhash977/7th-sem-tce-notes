@@ -1,0 +1,33 @@
+clc;
+close all;
+clear all;
+f=input('Enter the frequency in Mhz: ');
+L=300/f; 
+disp('Thus the wavelength is: ');
+L 
+d=input('Enter the distance in km: ');
+Gt=input('Enter the transmitting antenna gain in db: ');
+Gr=input('Enter the receiving antenna gain in db: ');
+Pt=input('Enter the transmitted power in db: ');
+ls=32.44+20*log10(d)+20*log10(f);
+disp(sprintf('%s %d %s','The path loss is:',ls,'db'));
+Pr=Pt+Gt+Gr-ls; 
+disp(sprintf('%s %d %s','The recieved power is:',Pr,'db'));
+Pr=10^(Pr/10); 
+disp(sprintf('%s %d %s','The recieved power is:',Pr,'watts'));
+
+
+% OUTPUT
+
+Enter the frequency in Mhz: > 500
+Thus the wavelength is: 
+L = 0.6000
+Enter the distance in km: > 5
+Enter the transmitting antenna gain in db: > 4
+Enter the receiving antenna gain in db: > 2
+Enter the transmitted power in db: > 100
+The path loss is: 100.399 db
+The recieved power is: 5.6012 db
+The recieved power is: 3.63178 watts
+
+
