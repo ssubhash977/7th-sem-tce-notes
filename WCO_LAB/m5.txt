@@ -1,7 +1,8 @@
 ﻿clc; 
 clear all; 
 close all; 
-f=input('enter the frequency of transmisson in mhz:'); Hb=input('enter the height of base station Antenna in meter:');
+f=input('enter the frequency of transmisson in mhz:');
+Hb=input('enter the height of base station Antenna in meter:');
 Hm=input('enter the height of mobile station Antenna in meter:');
 d=input('enter the distance between the base and mobile stations:'); 
 n=input('enter 0 for small city and 1 for large city:'); 
